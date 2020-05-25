@@ -8,3 +8,6 @@ npm install -g create-component-library
 
 create-component-library youComponentLibraryName
 ```
+
+## Library
+**<a href="https://github.com/smilelabi/library-skeleton" target="_blank">library-skeleton</a>**

@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+var argv = require('yargs').argv;
+var shell = require("shelljs");
+
+// console.log('hello', argv);
+//  console.log('process.argv', process.argv);
+const program = require('commander')
+
+const command = argv._;
+// console.log(command)
+if(command[0] === 'create' || command[1] !== '') {
+    shell.exec("node bin/create-zw-template " + command[1]);
+    return ;
+}
+
+// 定义当前版本
+// 定义使用方法
+// 定义四个指令
+program
+  .version(require('../package').version)
+  .usage('<command> [options]')
+  .command('zwcli', 'use zw-vue-cli template(使用zw-vue-cli模板)')
+  .command('custom', 'use custom template(使用远程的自定义模板)')
+
+// 解析命令行参数
+program.parse(process.argv)
